@@ -1,0 +1,183 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    background-color: #ff5733;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    padding: 10px;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Seção Hero */
+  section.hero {
+    background: url('assets/images/pizza-hero.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  section.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  section.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e04f2e;
+  }
+  
+  /* Seção Menu */
+  section.menu .item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+  
+  section.menu .item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  section.menu .item-info {
+    margin-left: 20px;
+  }
+  
+  section.menu .item-info h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  section.menu .item-info p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  section.cart .cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.1rem;
+  }
+  
+  /* Seção Sobre */
+  section.about {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  section.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  section.about .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  section.about .about-content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  section.about .about-text {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  section.about ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  section.about ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  /* Animações */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  section {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
