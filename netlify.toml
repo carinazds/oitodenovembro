@@ -1,0 +1,60 @@
+[build]
+  # Configura o diretório de saída do build (aqui, estamos usando a raiz do repositório)
+  publish = "/"
+  
+  # Comando de build, caso esteja usando algum (para sites estáticos, deixe em branco ou use o padrão)
+  command = ""
+
+  # Diretório de saída dos arquivos estáticos, nesse caso, estamos publicando da raiz
+  functions = "netlify/functions"  # Caso você tenha funções serverless, senão pode remover
+
+[[redirects]]
+  # Redirecionar qualquer acesso à página "/admin" para "/admin/index.html"
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  # Garantir que as imagens da pasta /assets sejam acessíveis diretamente
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[plugins]]
+  # Configuração do Netlify CMS
+  package = "@netlify/plugin-cms"
+  config = {
+    cms_backend = "git-gateway",
+    cms_branch = "main",
+    media_folder = "assets/images",
+    public_folder = "/images",
+    collections = [
+      {
+        name = "pages",
+        label = "Páginas",
+        folder = "content",
+        create = true,
+        slug = "{{slug}}",
+        fields = [
+          { label = "Título", name = "title", widget = "string" },
+          { label = "Conteúdo", name = "content", widget = "markdown" },
+          { label = "Data", name = "date", widget = "datetime" },
+          { label = "Slug", name = "slug", widget = "string" }
+        ]
+      },
+      {
+        name = "menu",
+        label = "Cardápio",
+        folder = "content/menu",
+        create = true,
+        slug = "{{slug}}",
+        fields = [
+          { label = "Nome", name = "name", widget = "string" },
+          { label = "Preço", name = "price", widget = "number" },
+          { label = "Descrição", name = "description", widget = "markdown" },
+          { label = "Imagem", name = "image", widget = "image" }
+        ]
+      }
+    ]
+  }
