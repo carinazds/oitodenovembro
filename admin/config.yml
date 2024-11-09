@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: carinazds/oitodenovembro.git  # Substitua pelo seu usuário e repositório no GitHub
+  branch: master  # Use o nome correto do branch, caso não seja 'main'
+
+media_folder: "assets/images"   # Pasta para imagens
+public_folder: "/images"        # Pasta pública para imagens
+
+collections:
+  - name: "pages"
+    label: "Páginas"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Conteúdo", name: "content", widget: "markdown" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Slug", name: "slug", widget: "string" }
+
+  - name: "menu"
+    label: "Cardápio"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Preço", name: "price", widget: "number" }
+      - { label: "Descrição", name: "description", widget: "markdown" }
+      - { label: "Imagem", name: "image", widget: "image" }
