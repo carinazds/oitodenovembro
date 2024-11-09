@@ -1,6 +1,6 @@
 [build]
-  publish = "public" # Ou "dist", "build", dependendo da ferramenta que você usa
-  command = ""       # Adicione o comando de build necessário, se houver
+  publish = "." # Publicar da raiz do projeto
+  command = ""  # Deixe em branco se não houver comando de build
 
 [[redirects]]
   from = "/admin"
